@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Portal</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎉 College Event Portal</h1>
+        <p class="subtitle">Utsav 2026 · Explore events and register in one place</p>
+
+        <!-- Festival countdown -->
+        <div class="countdown" id="countdown"></div>
+
+        <!-- Search, filter and sort -->
+        <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="Search events..." aria-label="Search events">
+            <select id="categoryFilter" aria-label="Filter by category"></select>
+            <select id="sortSelect" aria-label="Sort events">
+                <option value="date">Sort by date</option>
+                <option value="name">Sort by name</option>
+            </select>
+        </div>
+
+        <!-- Event cards -->
+        <h2 class="section-title">📅 Events</h2>
+        <div id="eventList" class="event-list"></div>
+
+        <!-- Announcements -->
+        <h2 class="section-title">📢 Announcements</h2>
+        <div id="announcements"></div>
+
+        <!-- Registration -->
+        <h2 class="section-title" id="registerTitle">📝 Register for an event</h2>
+
+        <form id="regForm" novalidate>
+            <div class="field"><label for="name">Student name</label><input id="name" type="text"><p class="msg"></p></div>
+            <div class="field"><label for="regNo">Register number</label><input id="regNo" type="text"><p class="msg"></p></div>
+            <div class="field"><label for="dept">Department</label>
+                <select id="dept">
+                    <option value="">Select department</option>
+                    <option>Computer Science</option><option>Information Technology</option>
+                    <option>Electronics</option><option>Mechanical</option><option>Civil</option>
+                </select><p class="msg"></p></div>
+            <div class="field"><label for="year">Year</label>
+                <select id="year">
+                    <option value="">Select year</option>
+                    <option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option>
+                </select><p class="msg"></p></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email"><p class="msg"></p></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" maxlength="10"><p class="msg"></p></div>
+            <div class="field full"><label for="eventSelect">Event</label><select id="eventSelect"></select><p class="msg"></p></div>
+            <div class="field full"><label>Gender</label>
+                <div class="radios">
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div><p class="msg" id="genderMsg"></p></div>
+            <div class="field full"><label for="college">College / institution</label><input id="college" type="text" value="Sample College of Engineering"><p class="msg"></p></div>
+            <div class="field full"><label class="check"><input type="checkbox" id="terms"> I agree to the terms and conditions</label><p class="msg" id="termsMsg"></p></div>
+
+            <div class="buttons full">
+                <button type="submit" class="primary">Submit</button>
+                <button type="reset" class="secondary">Reset</button>
+            </div>
+        </form>
+
+        <div id="success" class="success" role="status"></div>
+
+        <footer class="footer"><p>College Event Portal · &copy; 2026</p></footer>
+
+    </div>
+
+    <script src="events.js"></script>
+
+</body>
+
+</html>
